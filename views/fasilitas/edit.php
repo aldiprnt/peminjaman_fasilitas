@@ -15,8 +15,14 @@
 </head>
 <body>
 
-    <!-- PEMANGGILAN NAVBAR -->
-    <?php include __DIR__ . '/../navbar.php'; ?>
+    <!-- PEMANGGILAN NAVBAR (DIPERBAIKI DENGAN MENGARAHKAN KE FOLDER LAYOUTS) -->
+    <?php 
+    if (file_exists(__DIR__ . '/../layouts/navbar.php')) {
+        include __DIR__ . '/../layouts/navbar.php';
+    } elseif (file_exists(__DIR__ . '/../layouts/header.php')) {
+        include __DIR__ . '/../layouts/header.php';
+    }
+    ?>
 
     <h2>Edit Data Fasilitas</h2>
     <a href="index.php?action=kelola_fasilitas" class="btn-back">← Batal & Kembali</a>
